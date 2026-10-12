@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>e-LKPD SPLTV – Detektif Nota</title>
+<style>
+:root{--bg:#f6f9fd;--fg:#1c2733;--card:#fff;--bd:#c9d6e6;--ac:#2f6db5;--ac2:#dae9f7;--ok:#1f8a4c;--warn:#b7791f;--mut:#5b6b7d;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12181f;--fg:#e6edf5;--card:#1b2530;--bd:#33445a;--ac:#6fa8e8;--ac2:#22364d;--ok:#53c27f;--warn:#e0b050;--mut:#9fb0c3}}
+:root[data-theme="dark"]{--bg:#12181f;--fg:#e6edf5;--card:#1b2530;--bd:#33445a;--ac:#6fa8e8;--ac2:#22364d;--ok:#53c27f;--warn:#e0b050;--mut:#9fb0c3}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 Georgia,"Times New Roman",serif}
+.w{max-width:820px;margin:0 auto;padding:14px 14px 60px}
+header{background:linear-gradient(135deg,var(--ac),#1d4a82);color:#fff;border-radius:16px;padding:16px 18px 12px}
+header h1{margin:0 0 4px;font-size:1.3rem}header p{margin:0;opacity:.92;font-size:.9rem}
+.chips{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap}.chips span{background:#ffffff26;border-radius:99px;padding:2px 10px;font-size:.76rem}
+.id{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+@media(max-width:560px){.id{grid-template-columns:1fr}}
+label.f,.mut{font-size:.8rem;color:var(--mut)}label.f{display:block}
+input,textarea,select{width:100%;font:inherit;font-size:.95rem;padding:7px 9px;border:1.5px solid var(--bd);border-radius:9px;background:var(--card);color:var(--fg)}
+textarea{min-height:76px;resize:vertical}
+input.n{width:66px;text-align:center;display:inline-block;padding:5px}select[data-a]{width:auto;display:inline-block;padding:5px}
+.ok{border-color:var(--ok)!important;box-shadow:0 0 0 2px #1f8a4c30}.bad{border-color:var(--warn)!important;box-shadow:0 0 0 2px #b7791f30}
+span.ok,span.bad{box-shadow:none;border:0}span.ok{color:var(--ok)}span.bad{color:var(--warn)}
+.pills{display:flex;gap:6px;overflow-x:auto;padding:4px 0 8px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5}
+.pills button{flex:0 0 auto;border:1.5px solid var(--bd);background:var(--card);color:var(--fg);border-radius:99px;padding:5px 12px;font:inherit;font-size:.82rem;cursor:pointer}
+.pills button.on{background:var(--ac);color:#fff;border-color:var(--ac)}.pills button.dn{border-color:var(--ok)}
+.bar{height:6px;background:var(--ac2);border-radius:9px;overflow:hidden;margin-bottom:10px}.bar i{display:block;height:100%;width:0;background:var(--ok);transition:width .3s}
+section.st{display:none;background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px}section.st.on{display:block}
+h2{margin:0 0 2px;font-size:1.15rem;color:var(--ac)}.tag{font-size:.75rem;color:var(--mut);margin-bottom:10px}
+.box{background:var(--ac2);border-radius:10px;padding:10px 12px;margin:10px 0;font-size:.93rem}
+table{border-collapse:collapse;width:100%;margin:8px 0;font-size:.92rem}th,td{border:1px solid var(--bd);padding:6px;text-align:center}th{background:var(--ac2)}
+.q{border:1px solid var(--bd);border-radius:12px;padding:10px 12px;margin:12px 0}.qp{margin-bottom:6px}
+.eq{margin:8px 0;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.ref{background:var(--ac2);border-left:4px solid var(--ac);border-radius:8px;padding:8px 10px;margin:8px 0;font-size:.9rem}
+details{margin:6px 0;border:1px dashed var(--bd);border-radius:10px;padding:5px 10px}summary{cursor:pointer;color:var(--ac);font-size:.9rem}
+.nav{display:flex;justify-content:space-between;margin-top:14px;gap:8px}
+.btn{background:var(--ac);color:#fff;border:0;border-radius:10px;padding:8px 16px;font:inherit;font-size:.92rem;cursor:pointer}.btn.g{background:transparent;color:var(--ac);border:1.5px solid var(--ac)}.btn.s{padding:4px 10px;font-size:.82rem;margin:2px 4px 2px 0}.btn.on{background:var(--ok);border-color:var(--ok);color:#fff}
+.act{margin-top:8px}.res{margin-top:6px;font-size:.9rem}
+ol li{margin:6px 0}.lg span{display:inline-block;padding:1px 10px;border-radius:6px;border:2px solid;margin-right:4px;font-size:.82rem}
+</style>
+</head>
+<body>
+<div class="w">
+<header>
+<h1>🧾 e-LKPD: Detektif Nota</h1>
+<p>Menemukan harga satuan konsumsi class meeting dengan Sistem Persamaan Linear Tiga Variabel (SPLTV)</p>
+<div class="chips"><span>Matematika · Kelas X (Fase E)</span><span>Problem Based Learning</span><span>Mindful</span><span>Meaningful</span><span>Joyful</span></div>
+</header>
+<div class="id">
+<div><label class="f">Nama kelompok *</label><input data-id="nm"></div>
+<div><label class="f">Kelas</label><input data-id="kl"></div>
+<div><label class="f">Anggota 1 (pembaca masalah)</label><input data-id="a1"></div>
+<div><label class="f">Anggota 2 (penulis)</label><input data-id="a2"></div>
+<div><label class="f">Anggota 3 (pengecek hitungan)</label><input data-id="a3"></div>
+<div><label class="f">Anggota 4 (juru bicara)</label><input data-id="a4"></div>
+</div>
+<div class="pills" id="pills"></div>
+<div class="bar"><i id="bar"></i></div>
+<div id="m"></div>
+<div class="nav"><button class="btn g" id="pv">← Sebelumnya</button><button class="btn" id="nx">Berikutnya →</button></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+/* ---------- data ---------- */
+var STEPS=[
+{n:'Panduan',h:'📖 Panduan Penggunaan e-LKPD',g:'Baca dulu sebelum mulai',html:'<p>e-LKPD adalah lembar kerja yang dikerjakan di layar. Ikuti langkah berikut:</p><ol><li><b>Isi identitas</b> kelompok di bagian atas halaman. Nama kelompok wajib diisi agar PDF jawaban dapat diunduh.</li><li>Buka tab <b>Misi</b> untuk membaca masalah, lalu kerjakan <b>Kegiatan 1 sampai 7</b> secara berurutan melalui tab di atas atau tombol Berikutnya. Bagi peran anggota kelompok seperti pada kolom identitas.</li><li>Tulis jawaban pada kotak yang tersedia, lalu klik <b>Periksa jawaban</b> di bawah <b>setiap soal</b>.</li><li><b>Soal isian angka dan pilihan:</b> kotak <span style="color:var(--ok)"><b>hijau</b></span> berarti benar, kotak <span style="color:var(--warn)"><b>kuning</b></span> berarti periksa lagi. Kamu boleh memperbaiki dan memeriksa ulang. Pembahasan muncul setelah semua benar atau setelah pemeriksaan kedua.</li><li><b>Soal uraian:</b> setelah kamu menulis jawaban, klik Periksa jawaban untuk melihat <b>jawaban acuan</b>. Bandingkan dengan jawabanmu, perbaiki jika berbeda, lalu pilih <i>Sudah sesuai</i> atau <i>Perlu diperbaiki</i>.</li><li>Tombol <b>💡 Petunjuk</b> membantu jika kelompok buntu. Buka satu per satu.</li><li>Jawaban <b>tersimpan otomatis</b> di perangkat ini. Gunakan perangkat dan browser yang sama, dan jangan memakai mode samaran.</li><li>Setelah selesai, buka tab <b>Selesai</b>, klik <b>Unduh jawaban (PDF)</b>, cek file di folder Unduhan/Download, lalu <b>kumpulkan file PDF kepada guru</b> sesuai cara yang ditentukan guru.</li></ol><div class="box">Ingat: tujuan kegiatan ini adalah <b>menemukan sendiri</b> cara menyelesaikan masalah. Salah hitung itu wajar, jadikan bahan belajar bersama kelompok.</div>'},
+{n:'Misi',h:'Misi & Masalah',g:'Sintaks 1 PBL · Orientasi Masalah',html:'<p>Sekolah akan mengadakan <b>class meeting</b>. Panitia memesan konsumsi ke kantin. Tiga kelas sudah memesan dan menerima nota, tetapi <b>daftar harga satuan hilang</b>. Yang tersisa hanya nota berikut:</p><table><tr><th>Nota</th><th>Nasi kotak</th><th>Risoles</th><th>Air mineral</th><th>Total bayar</th></tr><tr><td>Kelas X-A</td><td>2</td><td>1</td><td>1</td><td>Rp27.000</td></tr><tr><td>Kelas X-B</td><td>1</td><td>3</td><td>2</td><td>Rp28.000</td></tr><tr><td>Kelas X-C</td><td>3</td><td>2</td><td>3</td><td>Rp47.000</td></tr></table><div class="box">Panitia akan memesan untuk <b>kelas X-D</b>: 4 nasi kotak, 3 risoles, dan 2 air mineral, dengan uang <b>Rp60.000</b>. Sebagai tim detektif nota, bantu panitia menemukan <b>harga satuan</b> dan memutuskan apakah uangnya <b>cukup</b>!</div>'},
+{n:'1 Paham',h:'Kegiatan 1 · Memahami Masalah',g:'Sintaks 2 PBL · Pengorganisasian',q:['1a','1b']},
+{n:'2 Model',h:'Kegiatan 2 · Membuat Model Matematika',g:'Sintaks 3 PBL · Penyelidikan (3a)',html:'<div class="box">Misalkan (dalam <b>ribuan rupiah</b>): <b>x</b> = harga 1 nasi kotak, <b>y</b> = harga 1 risoles, <b>z</b> = harga 1 air mineral.</div>',q:['2a','2b']},
+{n:'3 Eliminasi',h:'Kegiatan 3 · Menyelidiki Strategi (Eliminasi)',g:'Sintaks 3 PBL · Penyelidikan (3b)',q:['3a','3b','3c','3d']},
+{n:'4 Substitusi',h:'Kegiatan 4 · Substitusi',g:'Sintaks 3 PBL · Penyelidikan (3c)',q:['4a','4b']},
+{n:'5 Periksa',h:'Kegiatan 5 · Memeriksa Jawaban',g:'Sintaks 3 PBL · Penyelidikan · Mindful',q:['5a','5b','5c']},
+{n:'6 Jawab',h:'Kegiatan 6 · Menjawab Pertanyaan Panitia',g:'Sintaks 4 PBL · Menyajikan Hasil · Meaningful',q:['6a','6b','6c']},
+{n:'7 Analisis',h:'Kegiatan 7 · Analisis (Tantangan)',g:'Sintaks 5 PBL · Analisis dan Evaluasi',q:['7a','7b','7c']},
+{n:'Refleksi',h:'Refleksi Kelompok',g:'Penutup · Mindful',q:['r1','r2','r3']},
+{n:'Selesai',h:'Selesai & Unduh Jawaban',g:'Kumpulkan ke guru',fin:1}
+];
+var Q={
+'1a':{k:'t',l:'1a.',p:'Apa yang diketahui dari masalah?',r:'Tiga nota (X-A, X-B, X-C) beserta jumlah nasi kotak, risoles, air mineral dan total bayarnya; pesanan kelas X-D (4 nasi kotak, 3 risoles, 2 air mineral); uang panitia Rp60.000.'},
+'1b':{k:'t',l:'1b.',p:'Apa yang ditanyakan?',r:'Harga satuan nasi kotak, risoles, dan air mineral; total pesanan kelas X-D; apakah uang Rp60.000 cukup dan berapa kembaliannya.'},
+'2a':{k:'n',l:'2a.',p:'Isi koefisien dan total untuk setiap nota (persamaan (1), (2), (3)).',t:['Nota X-A: __2__ x + __1__ y + __1__ z = __27__','Nota X-B: __1__ x + __3__ y + __2__ z = __28__','Nota X-C: __3__ x + __2__ y + __3__ z = __47__'],r:'Setiap nota menjadi satu persamaan: 2x + y + z = 27; x + 3y + 2z = 28; 3x + 2y + 3z = 47. Koefisien adalah jumlah barang pada nota, ruas kanan adalah total bayar (ribuan rupiah).'},
+'2b':{k:'t',l:'2b.',p:'Mengapa kelompok perlu memisalkan x, y, dan z? Apa satuannya?',r:'Karena harga tiap barang belum diketahui, variabel mewakili harga satuannya. Satuannya ribuan rupiah agar persamaan lebih ringkas.'},
+'3a':{k:'t',l:'3a.',p:'Variabel mana yang paling mudah dieliminasi lebih dahulu? Pilih lalu tulis alasannya.',sel:1,h:['Dari SPLDV yang kamu ingat, apa yang dilakukan agar satu variabel hilang? Perhatikan koefisien variabel pilihanmu pada ketiga persamaan.','Samakan dulu koefisien variabel itu pada dua persamaan yang dipasangkan (kalikan dengan bilangan yang sesuai), lalu kurangkan atau jumlahkan.','Setelah satu variabel hilang, berapa persamaan dan berapa variabel yang tersisa? Apakah sistem itu sudah kamu kenal?'],r:'Variabel mana pun boleh, asalkan alasannya jelas. Contoh: z, karena koefisiennya 1, 2, dan 3 sehingga mudah disamakan (persamaan (1) dikali 2 dan 3).'},
+'3b':{k:'t',l:'3b.',p:'Eliminasi variabel itu dari persamaan (1) dan (2). Tulis langkah dan hasilnya sebagai persamaan (4).',r:'Jika z dieliminasi: (1) x 2 menjadi 4x + 2y + 2z = 54, dikurangi (2) x + 3y + 2z = 28, hasilnya 3x - y = 26 ... (4).'},
+'3c':{k:'t',l:'3c.',p:'Eliminasi variabel yang sama dari persamaan (1) dan (3). Tulis hasilnya sebagai persamaan (5).',r:'(1) x 3 menjadi 6x + 3y + 3z = 81, dikurangi (3) 3x + 2y + 3z = 47, hasilnya 3x + y = 34 ... (5).'},
+'3d':{k:'t',l:'3d.',p:'Selesaikan (4) dan (5). Tulis dua nilai yang kamu peroleh.',r:'(4) + (5): 6x = 60 sehingga x = 10; lalu y = 34 - 30 = 4. Jika kelompokmu mengeliminasi variabel lain, langkahnya berbeda tetapi hasil akhir x = 10, y = 4, z = 3 tetap sama.'},
+'4a':{k:'t',l:'4a.',p:'Substitusikan dua nilai yang sudah ditemukan ke salah satu persamaan awal untuk memperoleh variabel ketiga. Tulis langkahnya.',r:'Dari (1): 2(10) + 4 + z = 27, sehingga z = 3.'},
+'4b':{k:'n',l:'4b.',p:'Tuliskan harga satuan (ribuan rupiah).',t:['x = __10__   y = __4__   z = __3__'],r:'Nasi kotak Rp10.000, risoles Rp4.000, air mineral Rp3.000.'},
+'5a':{k:'t',l:'5a.',p:'Substitusikan x, y, z ke persamaan (1), (2), dan (3). Tulis perhitungannya.',r:'(1) 2(10) + 4 + 3 = 27; (2) 10 + 3(4) + 2(3) = 10 + 12 + 6 = 28; (3) 3(10) + 2(4) + 3(3) = 30 + 8 + 9 = 47.'},
+'5b':{k:'n',l:'5b.',p:'Isi hasil hitungnya. Apakah sama dengan total nota?',t:['Persamaan (1) = __27__','Persamaan (2) = __28__','Persamaan (3) = __47__'],r:'Ketiga hasil sama dengan total nota (27, 28, 47), jadi penyelesaian benar.'},
+'5c':{k:'t',l:'5c.',p:'Mengapa pemeriksaan harus pada ketiga persamaan, bukan hanya satu?',r:'Penyelesaian SPLTV harus memenuhi semua persamaan. Nilai yang salah bisa saja kebetulan memenuhi satu persamaan, tetapi tidak memenuhi yang lain.'},
+'6a':{k:'n',l:'6a.',p:'Hitung pesanan kelas X-D (4 nasi kotak, 3 risoles, 2 air mineral) dan putuskan.',t:['Total pesanan X-D = __58__ ribu rupiah','Uang Rp60.000 %%Cukup,Tidak cukup|0%%','Kembalian = __2__ ribu rupiah'],r:'4(10) + 3(4) + 2(3) = 40 + 12 + 6 = 58, jadi Rp58.000. Uang Rp60.000 cukup, kembaliannya Rp2.000.'},
+'6b':{k:'t',l:'6b.',p:'Apakah jawaban kelompok masuk akal untuk harga makanan di kantin? Jelaskan.',r:'Masuk akal: nasi kotak Rp10.000, risoles Rp4.000, dan air mineral Rp3.000 adalah harga yang wajar di kantin sekolah.'},
+'6c':{k:'t',l:'6c.',p:'Siapkan penjelasan untuk dipresentasikan: model, eliminasi, substitusi, pemeriksaan, keputusan.',r:'Model: 2x+y+z=27; x+3y+2z=28; 3x+2y+3z=47. Eliminasi z menghasilkan 3x-y=26 dan 3x+y=34. Diperoleh x=10, y=4, z=3 (diperiksa pada ketiga persamaan). Total X-D Rp58.000, uang cukup, kembalian Rp2.000.'},
+'7a':{k:'t',l:'7a.',p:'Jika hanya ada nota X-A dan X-B, apakah harga ketiga barang dapat ditentukan dengan pasti? Mengapa dibutuhkan tiga nota?',r:'Tidak pasti. Dua nota hanya memberi dua persamaan untuk tiga variabel, sehingga ada banyak kemungkinan. Contoh: (10, 4, 3) dan (9,8; 3,4; 4) sama-sama memenuhi nota X-A dan X-B. Diperlukan tiga persamaan yang saling melengkapi.'},
+'7b':{k:'t',l:'7b.',p:'Jika variabel lain yang dieliminasi lebih dahulu, apakah hasilnya sama? Tulis temuan kelompok.',r:'Hasilnya sama. Contoh eliminasi y lebih dahulu: 5x + z = 53 dan 7x + 5z = 85, menghasilkan x = 10 dan z = 3, lalu y = 4.'},
+'7c':{k:'t',l:'7c.',p:'Rumuskan langkah umum menyelesaikan SPLTV menurut kelompokmu.',r:'1) Misalkan variabel dan bentuk tiga persamaan. 2) Eliminasi satu variabel dari dua pasang persamaan sehingga diperoleh SPLDV. 3) Selesaikan SPLDV. 4) Substitusikan untuk variabel ketiga. 5) Periksa pada ketiga persamaan dan tafsirkan sesuai konteks.'},
+'r1':{k:'r',l:'1.',p:'Hal yang kami pahami hari ini'},
+'r2':{k:'r',l:'2.',p:'Bagian yang paling sulit dan cara kami mengatasinya'},
+'r3':{k:'r',l:'3.',p:'Strategi yang paling membantu kami'}
+};
+/* ---------- state ---------- */
+var KEY='elkpd-spltv-v2',S={},cur=0,M=document.getElementById('m');
+try{S=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+S.id=S.id||{};
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+function num(v){return parseFloat(String(v).replace(',','.'))}
+function tpl(t){return t.replace(/__(\d+)__/g,'<input class="n" data-a="$1" inputmode="numeric">').replace(/%%(.+?)\|(\d)%%/g,function(m,o,a){return '<select data-a="'+a+'"><option value="">pilih</option>'+o.split(',').map(function(x,i){return '<option value="'+i+'">'+x+'</option>'}).join('')+'</select>'})}
+function fields(root){return [].slice.call(root.querySelectorAll('textarea,input,select'))}
+/* ---------- bangun ---------- */
+function build(id){
+  var q=Q[id],d=document.createElement('div');d.className='q';d.id='q-'+id;
+  var h='<div class="qp"><b>'+q.l+'</b> '+q.p+'</div>';
+  (q.h||[]).forEach(function(x,i){h+='<details><summary>💡 Petunjuk '+(i+1)+'</summary>'+x+'</details>'});
+  if(q.sel)h+='<select style="max-width:210px;margin-bottom:6px"><option value="">— pilih variabel —</option><option>x</option><option>y</option><option>z</option></select>';
+  if(q.k==='n')h+=q.t.map(function(l){return '<div class="eq">'+tpl(l)+'</div>'}).join('');
+  else h+='<textarea></textarea>';
+  if(q.k!=='r')h+='<div class="act"><button class="btn s" data-ck>Periksa jawaban</button></div><div class="res"></div>';
+  d.innerHTML=h;
+  var st=S[id]=S[id]||{v:[],st:'',ck:0,at:0},f=fields(d);
+  f.forEach(function(e,i){
+    if(st.v[i]!==undefined&&st.v[i]!==null)e.value=st.v[i];
+    e.addEventListener('input',function(){st.v[i]=e.value;e.classList.remove('ok','bad');save();prog()});
+    e.addEventListener('change',function(){st.v[i]=e.value;e.classList.remove('ok','bad');save();prog()});
+  });
+  d.addEventListener('click',function(ev){
+    var b=ev.target;
+    if(b.hasAttribute('data-ck'))run(id,false);
+    var s=b.getAttribute('data-st');
+    if(s){st.st=s;save();mark(d,s)}
+  });
+  return d;
+}
+function mark(d,s){[].forEach.call(d.querySelectorAll('[data-st]'),function(b){b.classList.toggle('on',b.getAttribute('data-st')===s)})}
+function run(id,restore){
+  var q=Q[id],d=document.getElementById('q-'+id),res=d.querySelector('.res'),st=S[id];
+  if(q.k==='t'){
+    var ta=d.querySelector('textarea');
+    if(ta.value.trim().length<8){res.innerHTML='<span class="bad">Tulis jawabanmu dulu, baru diperiksa.</span>';return}
+    res.innerHTML='<div class="ref"><b>Jawaban acuan</b><br>'+q.r+'</div><div class="mut">Bandingkan dengan jawabanmu. Perbaiki jika berbeda, lalu pilih:</div><button class="btn g s" data-st="ok">✓ Sudah sesuai</button><button class="btn g s" data-st="fix">✎ Perlu diperbaiki</button>';
+    mark(d,st.st);
+  }else{
+    var ins=[].slice.call(d.querySelectorAll('[data-a]')),ok=0,empty=0;
+    ins.forEach(function(i){i.classList.remove('ok','bad');if(i.value===''){empty++;return}
+      var g=i.tagName==='SELECT'?i.value===i.getAttribute('data-a'):num(i.value)===num(i.getAttribute('data-a'));
+      i.classList.add(g?'ok':'bad');if(g)ok++});
+    if(empty){res.innerHTML='<span class="bad">Isi semua kotak dulu, baru diperiksa.</span>';return}
+    if(!restore)st.at++;
+    var all=ok===ins.length;
+    res.innerHTML=(all?'<span class="ok"><b>✓ Benar semua!</b></span>':'<span class="bad"><b>'+ok+' dari '+ins.length+' kotak sudah benar.</b> Hitung ulang kotak berwarna kuning, lalu periksa lagi.</span>')+((all||st.at>=2)?'<div class="ref"><b>Pembahasan</b><br>'+q.r+'</div>':'');
+  }
+  if(!restore){st.ck=1;save()}
+  prog();
+}
+function prog(){
+  var ids=Object.keys(Q).filter(function(k){return Q[k].k!=='r'}),done=0,ok=0,tot=0;
+  ids.forEach(function(k){var s=S[k];if(s&&s.ck)done++});
+  [].forEach.call(document.querySelectorAll('input[data-a],select[data-a]'),function(e){tot++;if(e.classList.contains('ok'))ok++});
+  document.getElementById('bar').style.width=Math.round(done/ids.length*100)+'%';
+  var sc=document.getElementById('sc');if(sc)sc.textContent='Soal sudah diperiksa: '+done+' dari '+ids.length+'. Kotak angka/pilihan benar: '+ok+' dari '+tot+'.';
+}
+STEPS.forEach(function(s,i){
+  var e=document.createElement('section');e.className='st';
+  e.innerHTML='<h2>'+s.h+'</h2><div class="tag">'+s.g+'</div>'+(s.html||'');
+  (s.q||[]).forEach(function(id){e.appendChild(build(id))});
+  if(s.fin){e.insertAdjacentHTML('beforeend','<div class="box" id="sc"></div><p>Pastikan semua soal sudah dikerjakan dan diperiksa, lalu unduh jawaban kelompokmu sebagai PDF dan kumpulkan kepada guru.</p><button class="btn" id="dl">⬇ Unduh jawaban (PDF)</button><div class="res" id="dlm"></div>')}
+  M.appendChild(e);
+});
+Object.keys(Q).forEach(function(id){var s=S[id];if(s&&s.ck&&Q[id].k!=='r')run(id,true);if(s&&s.st){var d=document.getElementById('q-'+id);mark(d,s.st)}});
+[].forEach.call(document.querySelectorAll('[data-id]'),function(e){var k=e.getAttribute('data-id');if(S.id[k])e.value=S.id[k];e.addEventListener('input',function(){S.id[k]=e.value;save()})});
+/* ---------- navigasi ---------- */
+var secs=[].slice.call(document.querySelectorAll('section.st')),pills=document.getElementById('pills');
+STEPS.forEach(function(s,i){var b=document.createElement('button');b.textContent=s.n;b.onclick=function(){go(i)};pills.appendChild(b)});
+function go(i){
+  cur=Math.max(0,Math.min(secs.length-1,i));
+  secs.forEach(function(s,j){s.classList.toggle('on',j===cur)});
+  [].forEach.call(pills.children,function(b,j){b.classList.toggle('on',j===cur);b.classList.toggle('dn',j<cur)});
+  document.getElementById('pv').style.visibility=cur===0?'hidden':'visible';
+  document.getElementById('nx').style.visibility=cur===secs.length-1?'hidden':'visible';
+  pills.children[cur].scrollIntoView({inline:'center',block:'nearest'});window.scrollTo(0,0);prog();
+}
+document.getElementById('pv').onclick=function(){go(cur-1)};
+document.getElementById('nx').onclick=function(){go(cur+1)};
+/* ---------- PDF ---------- */
+function cl(s){return String(s).replace(/[\u2013\u2014\u2212]/g,'-').replace(/\u2192/g,'->').replace(/[\u2018\u2019]/g,"'").replace(/[\u201C\u201D]/g,'"').replace(/[^\x0A\x20-\x7E\u00A0-\u00FF]/g,'')}
+function strip(h){var t=document.createElement('div');t.innerHTML=h;return t.textContent}
+async function makePdf(){
+  var m=document.getElementById('dlm');
+  if(!(S.id.nm||'').trim()){m.innerHTML='<span class="bad">Isi nama kelompok di bagian atas halaman dulu.</span>';window.scrollTo(0,0);return}
+  if(!window.jspdf){m.innerHTML='<span class="bad">Pustaka PDF belum termuat. Periksa koneksi internet lalu muat ulang halaman.</span>';return}
+  var D=new window.jspdf.jsPDF({unit:'mm',format:'a4'}),y=16,W=180;
+  function ln(t,o){o=o||{};D.setFont('helvetica',o.b?'bold':'normal');D.setFontSize(o.s||10);
+    D.splitTextToSize(cl(t),W-(o.i||0)).forEach(function(l){if(y>executeLimit){D.addPage();y=16}D.text(l,15+(o.i||0),y);y+=(o.s||10)*0.42+1.5});y+=(o.g||0)}
+  var executeLimit=280,I=S.id;
+  ln('e-LKPD SPLTV - Detektif Nota',{b:1,s:15,g:1});
+  ln('Matematika Kelas X (Fase E) | Problem Based Learning',{g:2});
+  ln('Kelompok: '+I.nm+'     Kelas: '+(I.kl||'-'),{b:1});
+  ln('Anggota: 1) '+(I.a1||'-')+'  2) '+(I.a2||'-')+'  3) '+(I.a3||'-')+'  4) '+(I.a4||'-'));
+  ln('Tanggal unduh: '+new Date().toLocaleString('id-ID'));
+  ln(document.getElementById('sc').textContent,{g:3});
+  STEPS.forEach(function(s){
+    if(!s.q)return;
+    ln(strip(s.h),{b:1,s:12,g:1});
+    s.q.forEach(function(id){
+      var q=Q[id],d=document.getElementById('q-'+id),f=fields(d),st=S[id];
+      ln(q.l+' '+q.p,{b:1});
+      if(q.k==='n'){
+        var j=0;
+        q.t.forEach(function(l){
+          var out=l.replace(/__(\d+)__/g,function(){var v=f[j++].value;return '['+(v===''?'..':v)+']'}).replace(/%%(.+?)\|(\d)%%/g,function(mm,o){var e=f[j++];return '['+(e.value===''?'..':o.split(',')[e.value])+']'});
+          ln(out,{i:4});
+        });
+        var oks=[].filter.call(d.querySelectorAll('[data-a]'),function(e){return e.classList.contains('ok')}).length;
+        ln('Hasil pemeriksaan: '+oks+' dari '+d.querySelectorAll('[data-a]').length+' kotak benar',{i:4,g:2});
+      }else{
+        var sv=q.sel?f[0].value:'',ta=f[f.length-1].value.trim();
+        if(q.sel)ln('Variabel dipilih: '+(sv||'-'),{i:4});
+        ln('Jawaban: '+(ta||'(belum diisi)'),{i:4});
+        if(q.k!=='r')ln('Pemeriksaan mandiri: '+(st.st==='ok'?'Sudah sesuai':st.st==='fix'?'Perlu diperbaiki':(st.ck?'Dilihat, belum dinilai':'Belum diperiksa')),{i:4});
+        y+=2;
+      }
+    });
+  });
+  var fn='eLKPD-SPLTV_'+cl(I.nm).replace(/[^A-Za-z0-9]+/g,'-').replace(/^-|-$/g,'')+'.pdf';
+  try{D.save(fn);m.innerHTML='<span class="ok"><b>✓ PDF diunduh.</b></span> Cek folder Unduhan/Download di perangkatmu, lalu kumpulkan file <b>'+fn+'</b> kepada guru.'}
+  catch(e){m.innerHTML='<span class="bad">Unduhan belum berhasil. Coba lagi, atau buka halaman ini dengan Chrome.</span>'}
+}
+document.getElementById('dl').onclick=makePdf;
+go(0);
+</script>
+</body>
+</html>
